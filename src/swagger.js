@@ -10,6 +10,9 @@ const options = {
     },
     servers: [
       {
+        url: "http://localhost:5000"
+      },
+      {
         url: "https://blood-donation-camp-backend.onrender.com"
       }
     ]

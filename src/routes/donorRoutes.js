@@ -18,7 +18,7 @@ const donorController = require("../controller/donorController");
  *               - bloodGroup
  *               - age
  *               - city
- *               - contactNumber
+ *               - contact
  *               - lastDonationDate
  *             properties:
  *               fullName:
@@ -29,7 +29,7 @@ const donorController = require("../controller/donorController");
  *                 type: number
  *               city:
  *                 type: string
- *               contactNumber:
+ *               contact:
  *                 type: string
  *               lastDonationDate:
  *                 type: string
