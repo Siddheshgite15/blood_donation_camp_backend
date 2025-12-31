@@ -53,4 +53,8 @@ router.post("/donors", donorController.createDonor);
  */
 router.get("/donors", donorController.getDonors);
 
+//health check route
+router.get("/health", (req, res) => {
+    res.status(200).send("Ok!");
+});
 module.exports = router;
