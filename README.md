@@ -18,26 +18,41 @@ https://blood-donation-camp-backend.onrender.com/
 
 ## 📁 Project Structure
 
-Blood_donation_camp_backend/
-├── src/
-│ ├── config/
-│ │ └── db.js # MongoDB connection configuration
-│ ├── controller/
-│ │ └── donorController.js # Request handlers
-│ ├── entities/
-│ │ └── donor.js # Mongoose schema/model
-│ ├── repository/
-│ │ └── donorRepo.js # Database operations
-│ ├── routes/
-│ │ └── donorRoutes.js # API route definitions
-│ ├── services/
-│ │ └── donorServices.js # Business logic & validation
-│ ├── app.js # Express app configuration
-│ ├── server.js # Server entry point
-│ └── swagger.js # Swagger API documentation
-├── .env # Environment variables
-├── package.json
-└── README.md
+### src/controller/
+HTTP layer.
+donorController.js handles requests, extracts data, calls services, returns JSON responses. No DB access.
+
+### src/entities/
+Data definitions.
+donor.js defines the Mongoose schema: fields, types, constraints, collection structure.
+
+### src/repository/
+Database access layer.
+donorRepo.js performs MongoDB queries using models. No HTTP or Express awareness.
+
+### src/services/
+Business logic layer.
+donorServices.js validates data, applies rules, decides outcomes, calls repository methods.
+
+### src/routes/
+Routing only.
+donorRoutes.js maps URLs and HTTP methods to controller functions. No logic.
+
+### src/app.js
+Express configuration.
+Initializes app, registers middleware, routes, Swagger. Does not start the server.
+
+### src/server.js
+Application entry point.
+Loads env vars, connects DB, starts server, listens on port.
+
+### src/swagger.js
+API documentation only.
+Defines Swagger/OpenAPI config and exposes /api-docs. No runtime logic.
+
+### .env
+Environment configuration.
+Stores secrets like MongoDB URI and port. Never committed.
 
 ## 📖 API Documentation
 Local : http://localhost:5000/api-docs
